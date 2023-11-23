@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import "../global.css"
 
 export default function Mid() {
-    const quotes = ["Get the cold shower!", "It's too cold sss!", "Time for some snacks!", "Go out and enjoy the weather!"]
     const [quote, setQuote] = useState("");
     const [city, setCity] = useState("");
     const [time, setTime] = useState("");
