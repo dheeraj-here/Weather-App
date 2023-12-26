@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import "../global.css"
 
 export default function Mid() {
-    const [quote, setQuote] = useState("");
     const [city, setCity] = useState("");
     const [time, setTime] = useState("");
     const [data, setData] = useState({
@@ -25,7 +24,6 @@ export default function Mid() {
     let formattedMinutes;
 
     const getCity = (e) => {
-        // console.log(e.target.value);
         setCity(e.target.value)
         console.log("Show",show, e.target.value.length);
 
@@ -76,22 +74,17 @@ export default function Mid() {
                 setTime(`${hours12}:${formattedMinutes} ${amOrPm}`)
                 if (Number(data.main.temp) - 271 <= 0) {
                     console.log("Ohh! ICeee");
-                    setQuote("Ohh! I Ceee!")
                 }
                 else if (Number(data.main.temp) - 271 <= 23) {
                     console.log("It's cold sss!");
-                    setQuote("It's cold sss!");
                 }
                 else if (Number(data.clouds.all) >= 75) {
-                    setQuote("Time for some snacks!");
                     console.log("Time for some snacks!");
                 }
                 else if (Number(data.main.temp) - 271 >= 37) {
-                    setQuote("Get the cold shower!");
                     console.log("Get the cold shower!");
                 }
                 else if (Number(data.main.temp) - 271 > 23 && Number(data.temp) < 37) {
-                    setQuote("Go out and enjoy the weather!");
                     console.log("Go out and enjoy the weather!");
                 }
                 console.log(data.sys.sunset);
@@ -115,11 +108,7 @@ export default function Mid() {
         }
     }
 
-    useEffect(() => {
-
-
-        // console.log(quotes[0]);
-    }, []);
+    
 
     return (
         <>
